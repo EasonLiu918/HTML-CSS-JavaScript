@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!-- saved from url=(0161)file:///D:/Users/11757/Desktop/Coursera/Learning%20HTML,%20CSS%20and%20JavaScript%20through%20Game%20Development/Module%202/Guessing%20Game/Guessing%20Game!.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    
+    
+
+    <title>Guessing Game!</title>
+    <script>
+    let answer;
+
+    function load() {
+        // Prepare the random number
+        answer = parseInt(Math.random() * 100) + 1;
+        console.log(answer);
+    }
+
+    function start() {
+        // Switch the display from the 'title screen' to the 'main screen'
+        document.getElementById("title").style.display = "none";
+        document.getElementById("main").style.display  = "flex";
+    }
+
+    function guess() {
+        // Find the previous guess and return if
+        // the previous guess is already correct
+        if (parseInt(document.getElementById("guess").textContent, 10) === answer)
+        return false;
+        
+        // Ask for the guess from the user
+        let raw = prompt("Enter an integer between 1 and 100:");
+        if (raw === null) return false;
+        
+        // Check the guess with the lab logic
+        //   Case 1: not a number
+        let asFloat = parseFloat(raw);
+        if (isNaN(asFloat)) {
+             document.getElementById("hint").innerHTML = "Please enter a number!";
+             return false;
+        }
+        //   Case 2: not an integer
+        let asInt = parseInt(raw, 10);
+        if (asInt !== asFloat) {
+        document.getElementById("hint").innerHTML = "Please enter an integer!";
+        return false;
+        }
+        //   Case 3: not within the valid range
+        if (asInt < 1 || asInt > 100) {
+        document.getElementById("hint").innerHTML =
+            "Please enter an integer between 1 and 100!";
+        return false;
+    }
+        
+        document.getElementById("guess").textContent = asInt;
+        
+        //   Case 4: the guess is too small
+        if (asInt < answer) {
+        document.getElementById("hint").innerHTML = "Your number is too small!";
+        return false;
+    }
+        //   Case 5: the guess is too big
+        if (asInt > answer) {
+        document.getElementById("hint").innerHTML = "Your number is too big!";
+        return false;
+    }
+        //   Case 6: the guess is correct
+        document.getElementById("hint").innerHTML = "You are right!";
+        return false;
+    }
+    </script>
+    <style>
+    /* This is the style of the body element */
+    body {
+        font-family: Georgia, serif;
+        background: black url(smoke.png);
+        background-size: 100% 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Set up the style of the boxes of the two screens */
+    .box{
+        width: 90vw;
+        height: 90vh;
+        margin: 5vh auto;
+        border: 5px solid black;
+        box-sizing: border-box;
+       
+    }
+    
+    /* Set up the style for the title screen */
+    #title{
+        background: rgba(0,0,0,0.45);
+        align-items: center;
+        color: #dcdcdc;
+        text-align: center;
+        display: flex; 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    /* Set up the style for the p and big */
+    #title1{
+        font-size: 4vw;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: .12em;
+        margin: 0 0 0.3vh;
+    }
+    #title2{
+        font-size: 9.5vw;
+        font-weight: 700;
+        line-height: 1;            /* &#34892;&#39640;&#36028;&#32202;&#65292;&#36991;&#20813;&#19978;&#19979;&#31354;&#30333; */
+        margin: 0 0 0.2vh;
+        text-transform: uppercase;
+    }
+    /* Set up the style for the title and subtitle */
+    #subtitle{
+        width: 100%;              /* &#8592; &#35731;&#21312;&#22602;&#26412;&#36523;&#25744;&#28415;&#25972;&#20491;&#26694;&#23532;&#24230; */
+        font-size: 2vw;
+        line-height: 1;
+        text-align: right;         /* &#9733; &#21491;&#23565;&#40778;&#65292;&#31526;&#21512;&#22294;&#31034;&#24863;&#35258; */
+        padding-right: 45vw;        /* &#33287;&#21491;&#26694;&#20445;&#25345;45vw &#20839;&#32302; */
+        margin-top: 0.2vh;
+        text-transform: uppercase;
+    }
+    #subtitlebig{
+        font-size: 200%;
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+    /* Set up the style for the main screen */
+    #main{
+        color: #111;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        display: none;
+    }
+    #titleGuess{
+        font-size:6vw;        
+        font-weight:500;
+        margin:0 0 3vh;
+}
+
+    /* Set up the style for 'button' */
+    
+    #button{
+          display: inline-block;          
+          margin: 1.5vh auto;
+          padding: 0.6vh 2vw;
+          background: #909090;
+          color: #000;
+          text-decoration: none;
+          border:8px solid #000;
+          border-radius:.8vw;
+          font-size:3vw;
+    }
+
+    /* Set up the style for hint */
+    #hint{
+        font-size: 4vw;
+        color: red;
+        text-align: center;
+    }
+    
+    </style>
+<style>
+    /* This is the style of the body element */
+    body {
+        font-family: Georgia, serif;
+        background: black url(smoke.png);
+        background-size: 100% 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Set up the style of the boxes of the two screens */
+
+    /* Set up the style for the title screen */
+
+    /* Set up the style for the p and big */
+
+    /* Set up the style for the title and subtitle */
+
+    /* Set up the style for the main screen */
+
+    /* Set up the style for 'button' */
+
+    /* Set up the style for hint */
+    </style><title>Guessing Game!</title><script>
+    let answer;
+
+    function load() {
+        // Prepare the random number
+    }
+
+    function start() {
+        // Switch the display from the 'title screen' to the 'main screen'
+    }
+
+    function guess() {
+        // Find the previous guess and return if
+        // the previous guess is already correct
+
+        // Ask for the guess from the user
+
+        // Check the guess with the lab logic
+        //   Case 1: not a number
+        
+        //   Case 2: not an integer
+
+        //   Case 3: not within the valid range
+
+        //   Case 4: the guess is too small
+
+        //   Case 5: the guess is too big
+
+        //   Case 6: the guess is correct
+
+    </script><style>
+    /* This is the style of the body element */
+    body {
+        font-family: Georgia, serif;
+        background: black url(smoke.png);
+        background-size: 100% 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Set up the style of the boxes of the two screens */
+
+    /* Set up the style for the title screen */
+
+    /* Set up the style for the p and big */
+
+    /* Set up the style for the title and subtitle */
+
+    /* Set up the style for the main screen */
+
+    /* Set up the style for 'button' */
+
+    /* Set up the style for hint */
+    </style></head>
+
+    
+    
+    
+<body onload="load()">
+    <!-- the title screen -->
+    <div class="box" id="title" onclick="start()">
+        
+        <p id="title1">Fantastic</p><p id="title2">Number</p>
+        <p id="subtitle">that <big>You Need</big><br>
+            to <big>Guess</big></p>
+    </div>
+
+    <!-- the game screen -->
+    <div class="box" id="main">
+        <p id="titleGuess">Your Guess: <span id="guess">-</span></p>
+        <a id="button" href="file:///D:/Users/11757/Desktop/Coursera/Learning%20HTML,%20CSS%20and%20JavaScript%20through%20Game%20Development/Module%202/Guessing%20Game/Guessing%20Game!.html#" onclick="return guess()">Enter Your Guess</a>
+        <p id="hint">Press the button to start the guess!</p>
+    </div>
+
+
+</body></html>
