@@ -1,4 +1,4 @@
-# HTML-CSS-JavaScript Game Collection 🎮
+# HTML-CSS-JavaScript Collection 🎮
 
 Welcome to a collection of 4 mini games built purely with HTML, CSS, and JavaScript!  
 Whether you're into guessing numbers, smashing moles, jumping over obstacles, or collecting gems — there's something here for everyone.
