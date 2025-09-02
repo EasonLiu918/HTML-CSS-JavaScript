@@ -4,7 +4,7 @@ This repository showcases 4 interactive browser-based mini games developed using
 
 ## 🎲 Games Included
 
-- [Guessing Game](./) – A number guessing game with instant feedback.
+- [Guessing Game](https://easonliu918.github.io/HTML-CSS-JavaScript/) – A number guessing game with instant feedback.
 - [Gem Rush](./gem_rush.html) – Collect gems while avoiding fireballs in a fast-paced action game.
 - [Hammer Game](./hammer_game.html) – Smash targets using precise keyboard timing.
 - [Jumping Game](./Jumping_game.html) – Jump over obstacles and survive as long as possible.
